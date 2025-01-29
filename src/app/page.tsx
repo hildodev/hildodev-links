@@ -1,100 +1,127 @@
 import Image from "next/image";
+import Link from "next/link";
+import Background from "@/assets/background.jpg";
+import Logo from "@/assets/logo.jpeg";
+import { CardLink } from "@/components/card-link";
+import {
+  Brush,
+  Code,
+  Facebook,
+  Instagram,
+  Languages,
+  Mail,
+  Music,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+import { TbBrandDiscord } from "react-icons/tb";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const links = [
+    {
+      icon: <TbBrandDiscord className="w-6 h-6" />,
+      title: "Meu Discord | Royal Devs",
+      url: "https://discord.gg/zc8HFTC4XA",
+    },
+    {
+      icon: <Languages className="w-6 h-6" />,
+      title: "Aprenda inglês do zero",
+      url: "https://go.hotmart.com/A97812917P",
+    },
+    {
+      icon: <Music className="w-6 h-6" />,
+      title: "Música de programação",
+      url: "https://open.spotify.com/playlist/6bmpSUdNYOK7ibTwVocnh1?si=7QRA1W25RHu7dgc8eAo7jA",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const socialMedias = [
+    {
+      href: "https://instagram.com/hildodev",
+      icon: <Instagram className="w-6 h-6" />,
+    },
+    {
+      href: "https://facebook.com/hildodev",
+      icon: <Facebook className="w-6 h-6" />,
+    },
+    {
+      href: "https://www.youtube.com/c/hildodev",
+      icon: <Youtube className="w-6 h-6" />,
+    },
+    { href: "https://x.com/hildodev", icon: <Twitter className="w-6 h-6" /> },
+    {
+      href: "mailto:hildocontato@gmail.com",
+      icon: <Mail className="w-6 h-6" />,
+    },
+  ];
+
+  return (
+    <div className="relative">
+      <header className="w-full h-48">
+        <Image
+          src={Background}
+          width={1200}
+          height={1200}
+          className="object-cover w-full h-full"
+          alt="Imagem de background"
+        />
+      </header>
+      <main className="bg-background max-w-2xl px-8 m-auto -mt-16 flex flex-col items-center justify-center rounded-t-full">
+        <div className="w-32 h-32 bg-background rounded-full flex items-center justify-center p-2">
+          <Image
+            src={Logo}
+            alt="Imagem do Hildo"
+            width={128}
+            height={128}
+            className="rounded-full w-full h-full"
+          />
+        </div>
+
+        <div className="text-center mt-4">
+          <h1 className="text-2xl font-semibold mb-1">Hildo</h1>
+          <p className="text-base">
+            Desenvolvo sites, aplicativos e soluções sob medida para você!
+            Solicite seu orçamento e receba uma resposta rápida.
+          </p>
+        </div>
+
+        <div className="flex items-center justify-center gap-4 mt-6 mb-8">
+          {socialMedias.map(({ href, icon }, index) => (
+            <Link key={index} href={href}>
+              {icon}
+            </Link>
+          ))}
+        </div>
+
+        <div className="w-full flex flex-col items-center justify-center gap-4">
+          <div className="w-full grid grid-cols-2 gap-4 max-[350px]:grid-cols-1">
+            <CardLink
+              icon={<Code className="w-6 h-6" />}
+              title="Solicite seu Orçamento"
+              url="https://wa.me/5511953742357?text=Ol%C3%A1%2C%20Hildo%21%20Tudo%20bem%3F%20Encontrei%20seu%20contato%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20servi%C3%A7o%20de%20programa%C3%A7%C3%A3o.%20Poderia%20me%20passar%20mais%20detalhes%20sobre%20como%20funciona%20e%20os%20valores%3F%20Fico%20no%20aguardo.%20Obrigado%21"
+              selected
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <CardLink
+              icon={<Brush className="w-6 h-6" />}
+              title="Conheça meu Designer"
+              url="https://parceiros.agenciagenios.com/hildodev"
+            />
+          </div>
+          {links.map(({ icon, title, url }, index) => (
+            <CardLink
+              key={index}
+              icon={icon}
+              title={title}
+              url={url}
+              variant="full"
+            />
+          ))}
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="text-center my-8">
+        <span className="text-base text-zinc-400">
+          hildodev © {new Date().getFullYear()}
+        </span>
       </footer>
     </div>
   );
