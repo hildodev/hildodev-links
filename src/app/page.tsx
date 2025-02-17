@@ -9,6 +9,7 @@ import {
   Facebook,
   Instagram,
   Languages,
+  Linkedin,
   Mail,
   Music,
   Twitter,
@@ -47,6 +48,10 @@ export default function Home() {
     {
       href: "https://www.youtube.com/c/hildodev",
       icon: <Youtube className="w-6 h-6" />,
+    },
+    {
+      href: "https://www.linkedin.com/in/hildodev/",
+      icon: <Linkedin className="w-6 h-6" />,
     },
     { href: "https://x.com/hildodev", icon: <Twitter className="w-6 h-6" /> },
     {
