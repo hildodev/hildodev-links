@@ -5,8 +5,8 @@ import Logo from "@/assets/logo.jpeg";
 import { CardLink } from "@/components/card-link";
 import {
   Brush,
-  Code,
   Code2,
+  DollarSign,
   Facebook,
   Instagram,
   Languages,
@@ -22,7 +22,7 @@ export default function Home() {
   const links = [
     {
       icon: <Code2 className="w-6 h-6" />,
-      title: "Aprenda programação DO ZERO AO PROFISSIONAL!",
+      title: "Aprenda programação DO ZERO AO PROFISSIONAL",
       url: "https://go.hotmart.com/B77842021J",
     },
     {
@@ -107,8 +107,8 @@ export default function Home() {
         <div className="w-full flex flex-col items-center justify-center gap-4">
           <div className="w-full grid grid-cols-2 gap-4 max-[350px]:grid-cols-1">
             <CardLink
-              icon={<Code className="w-6 h-6" />}
-              title="Solicite seu Orçamento"
+              icon={<DollarSign className="w-6 h-6" />}
+              title="Solicite um Orçamento Agora"
               url="https://wa.me/5511953742357?text=Ol%C3%A1%2C%20Hildo%21%20Tudo%20bem%3F%20Encontrei%20seu%20contato%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20servi%C3%A7o%20de%20programa%C3%A7%C3%A3o.%20Poderia%20me%20passar%20mais%20detalhes%20sobre%20como%20funciona%20e%20os%20valores%3F%20Fico%20no%20aguardo.%20Obrigado%21"
               selected
             />
