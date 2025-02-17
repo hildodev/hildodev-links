@@ -6,6 +6,7 @@ import { CardLink } from "@/components/card-link";
 import {
   Brush,
   Code,
+  Code2,
   Facebook,
   Instagram,
   Languages,
@@ -19,6 +20,11 @@ import { TbBrandDiscord } from "react-icons/tb";
 
 export default function Home() {
   const links = [
+    {
+      icon: <Code2 className="w-6 h-6" />,
+      title: "Aprenda programação DO ZERO AO PROFISSIONAL!",
+      url: "https://go.hotmart.com/B77842021J",
+    },
     {
       icon: <TbBrandDiscord className="w-6 h-6" />,
       title: "Meu Discord | Royal Devs",
